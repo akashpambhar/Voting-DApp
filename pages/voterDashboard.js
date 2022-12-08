@@ -78,7 +78,7 @@ export default function VoterDashboard(props) {
             const signer = await getProviderOrSigner(true);
 
             const votingContract = new Contract(
-                CONTRACT_ADDRESS,
+                VOTING_CONTRACT_ADDRESS,
                 abi,
                 signer
             );
@@ -126,7 +126,7 @@ export default function VoterDashboard(props) {
         if (load) {
             return (
                 <div>
-                    <table>
+                    <table className="table table-striped table-hover">
                         <tbody>
                             {candidateList.map(candidateList => {
                                 return (
@@ -148,7 +148,7 @@ export default function VoterDashboard(props) {
         if (thanks) {
             return (
                 <>
-                    <table>
+                    <table className="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -168,18 +168,19 @@ export default function VoterDashboard(props) {
                             })}
                         </tbody>
                     </table>
-                    <h1> Thank you </h1>
+                    <h3 className='text-center'>You have already voted. Thank you! </h3>
                 </>
             );
         }
     }
 
     return (
-        <div>
-            <button onClick={logOut}>Log Out</button>
+        <div className='container'>
+            <h1 className='text-center mt-3'>Election Result</h1>
             {print()}
-            {render()}
             {thankyou()}
+            {render()}
+            <button onClick={logOut} className="btn btn-primary mt-5">Log Out</button>
         </div>
     );
 }
