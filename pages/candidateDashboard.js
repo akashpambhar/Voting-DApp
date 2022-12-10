@@ -64,6 +64,8 @@ export default function VoterDashboard(props) {
         }
 
         getCandidate()
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const render = () => {

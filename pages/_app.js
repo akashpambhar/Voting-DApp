@@ -43,6 +43,8 @@ function MyApp({ Component, pageProps }) {
         disableInjectedProvider: false,
       });
       connectWallet();
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
   }, [walletConnected]);
 

@@ -114,6 +114,8 @@ export default function VoterDashboard(props) {
         } else {
             getCandidateList(localStorage.getItem('voterID'))
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const render = () => {
